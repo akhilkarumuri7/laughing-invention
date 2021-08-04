@@ -1,0 +1,12 @@
+import datetime as dt 
+import matplotlib.pyplot as plt
+from matpotlib import style
+import pandas as pandas
+import pandas_datareader as web
+
+style.use("ggplot")
+start = dt.datetime(2020,1,1)
+end = dt.datetime(2021,8,4)
+df = web.get_data_yahoo("SNE", start, end)
+df["Adj Close"].plot()
+plt.show()
